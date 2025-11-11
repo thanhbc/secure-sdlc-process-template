@@ -11,7 +11,7 @@ level: 1
 
 ## Background
 
-Our software is built using a variety of open-source and third-party components. These dependencies can introduce security risks and licensing issues if not managed properly.
+Our software is built using various open-source and third-party components. These dependencies can introduce security risks and licensing issues if not managed properly.
 
 ## Our Process
 

@@ -14,8 +14,8 @@ rationale: Automated security scanning helps us to identify and fix common secur
 We use a combination of tools to scan our software for security vulnerabilities:
 
 *   **Dependency Scanning:** We use **Dependabot** and **OSV (local)** to automatically scan our dependencies for known vulnerabilities.
-*   **Static Application Security Testing (SAST):** We use a variety of SAST tools to analyze our source code for security flaws.
-*   **Dynamic Application Security Testing (DAST):** We use a variety of DAST tools to test our running applications for security vulnerabilities.
+*   **Static Application Security Testing (SAST):** We use various SAST tools to analyze our source code for security flaws.
+*   **Dynamic Application Security Testing (DAST):** We use various DAST tools to test our running applications for security vulnerabilities.
 
 ## ISO 27001 Compliance
 

@@ -12,7 +12,7 @@ This document outlines the Secure Software Development Lifecycle (SDLC) at BeLiv
 
 ## About BeLive Technology
 
-BeLive Technology builds enterprise-grade live streaming, short video, shoppable video, and interactive video SaaS solutions. Key areas include livestreaming, short-video, SDKs for iOS/Android/Web, AI-based analytics, interactive commerce, and enterprise integrations.
+BeLive Technology builds enterprise-grade live-streaming, short-video, shoppable-video, and interactive-video SaaS solutions. Key areas include livestreaming, short-video, SDKs for iOS/Android/Web, AI-based analytics, interactive commerce, and enterprise integrations.
 
 ## Development Methodology
 

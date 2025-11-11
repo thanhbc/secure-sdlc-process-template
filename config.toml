@@ -12,7 +12,6 @@ theme = "hugo-book"
   csor = 'a compliance system of record'
   vcs = 'git'
   vcsHost = 'github'
-  forkLink = 'https://github.com/kosli-dev/devopsctl/fork'
   logo = 'svg/logo.svg'
   BookSection = '/'
 
