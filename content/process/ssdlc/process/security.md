@@ -2,27 +2,25 @@
 title: Security Vulnerability Scanning
 level: 1
 weight: 30
-tldr: Software is scanned for security vulnerabilities prior to deployment
-rationale: Many common security vulnerabilities can be detected with automated tools.  By implementing tools for dependency scanning, SAST, and DAST in the pipeline we can reduce the attack surface of our software
+tldr: We scan our software for security vulnerabilities before every deployment.
+rationale: Automated security scanning helps us to identify and fix common security vulnerabilities before they can be exploited by attackers.
 ---
 
 # {{% param "title" %}}
 {{< area_head >}}
 
-## Background
+## Our Process
 
-{{< figure src="/images/magnfying-glass.jpg" alt="Magnifying glass" width="736">}}
+We use a combination of tools to scan our software for security vulnerabilities:
 
-Vulnerability scanning is the automated process of proactively identifying
-software vulnerabilities in software.  Many common security attacks such as
-vulnerable components and insecure coding techniques can be prevented by
-integrating these tools in your devops, and acting in a timely manner on
-issues found.
+*   **Dependency Scanning:** We use **Dependabot** and **OSV (local)** to automatically scan our dependencies for known vulnerabilities.
+*   **Static Application Security Testing (SAST):** We use a variety of SAST tools to analyze our source code for security flaws.
+*   **Dynamic Application Security Testing (DAST):** We use a variety of DAST tools to test our running applications for security vulnerabilities.
 
-At minimum, we recommend dependency scans in the pipelines.  More advanced tools
-such as Synk can help identify vulnerabilities post deployment, and help with
-remedial actions.
+## ISO 27001 Compliance
 
-* Implement security scanning in the pipeline
-* Act in a timely manner to security issues
-* Consider security concerns in code reviews and software design
+Our security scanning process supports our compliance with ISO 27001 in several ways:
+
+*   **A.14.2.1 Secure development policy:** Our security scanning process is a key part of our secure development policy.
+*   **A.14.2.8 System security testing:** Our use of security scanning tools is a form of system security testing.
+*   **A.14.2.9 System acceptance testing:** Our security scanning process helps us to ensure that our systems are secure before they are deployed to production.

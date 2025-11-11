@@ -1,8 +1,8 @@
 ---
 title: Dependency Management
 weight: 20
-tldr: Every dependency is defined securely, managed, and auditable
-rationale: Inputs to the build process can introduce security and quality issues, and as such must be defined, controlled, and transparent as part of the software development lifecycle.
+tldr: All dependencies are tracked and scanned for vulnerabilities.
+rationale: Managing the dependencies in our software is critical for security and license compliance. We must ensure that we are not using any components with known vulnerabilities or licenses that are incompatible with our business model.
 level: 1
 ---
 
@@ -11,21 +11,20 @@ level: 1
 
 ## Background
 
+Our software is built using a variety of open-source and third-party components. These dependencies can introduce security risks and licensing issues if not managed properly.
 
+## Our Process
 
-Key points:
+We use the following tools and processes to manage our dependencies:
 
-* You must have control over what dependencies are packaged in your software
-* All dependencies must comply with licensing requirements
-* Must only use software with licences agreed by {{% param "company"  %}}
+*   **Dependency Scanning:** We use **Dependabot** and **OSV (local)** to automatically scan our dependencies for known vulnerabilities.
+*   **License Compliance:** We review the licenses of all our dependencies to ensure that they are compatible with our products.
+*   **Software Bill of Materials (SBOM):** We maintain a list of all the dependencies used in our software.
 
-Dependencies can include docker base images, 3rd-party libraries, and other
-source code.
+## ISO 27001 Compliance
 
-{{< figure src="/images/dependency-management.svg" alt="Dependency Management" >}}
+Our dependency management process supports our compliance with ISO 27001 in several ways:
 
-
-During build, these inputs to the build package can be recorded as the software
-bill-of-materials while recording
-[binary provenance]({{< relref "/process/ssdlc/build/binary_provenance" >}})
-
+*   **A.14.2.1 Secure development policy:** Our dependency management process is a key part of our secure development policy.
+*   **A.14.2.8 System security testing:** Our use of dependency scanning tools is a form of system security testing.
+*   **A.18.1.4 Privacy and protection of personally identifiable information:** By ensuring that our dependencies are secure, we are helping to protect the privacy of our users.

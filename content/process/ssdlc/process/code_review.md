@@ -2,32 +2,29 @@
 title: Code Review
 weight: 10
 level: 1
-tldr: Code review is performed on all software changes
-rationale: Peer review is an essential mitigation against insider threats, as well as a means of improving knowledege sharing and quality.
-risks: insider_threat
+tldr: All code changes are peer-reviewed before being merged into the main branch.
+rationale: Peer review is a critical step in our development process. It helps us to identify and fix bugs, security vulnerabilities, and other issues before they reach production. It also promotes knowledge sharing and improves the overall quality of our code.
 ---
 
 # {{% param "title" %}}
 {{< area_head >}}
 
-## Background
-We use pull requests to document code reviews.  The pull request description should contain key information of the change, as well as any relevant information.  At a minimum, code reviews should be performed by someone capable of understanding the change and it’s associated risks.
+## Our Process
 
-Important considerations we make before approving a Pull Request:
+We use **GitHub Pull Requests** to facilitate our code review process. The process is as follows:
 
-- Security concerns: is this change secure?
-- Quality: is this maintainable?
-- Verification: Does this require manual testing? Has is been performed?
+1.  When a developer has completed a change, they open a Pull Request.
+2.  The Pull Request is assigned to at least one other developer for review.
+3.  The reviewer checks the code for correctness, clarity, and security.
+4.  If the reviewer has any feedback, they leave comments on the Pull Request.
+5.  The original developer addresses the feedback and pushes the changes to the same branch.
+6.  Once the reviewer is satisfied with the changes, they approve the Pull Request.
+7.  The Pull Request can then be merged into the `main` branch.
 
-{{< figure src="/images/feature-branch-pr.svg" alt="Feature Branch Strategy" >}}
+## ISO 27001 Compliance
 
-{{< hint warning >}}
-### Code Review Anti-patterns
+Our code review process supports our compliance with ISO 27001 in several ways:
 
-A common anti-pattern when using pull requests is waiting for review.  In an ideal situation, the lead time for review should approach 0.  If there is any delay on integration, it can lead to people batching larger and larger changes.  This causes larger pull requests, more delays, poorer code reviews, and ultimately more risks.
-
-To avoid this, we recommend pair- or ensemble-programming: a practice where more than one person works together to complete tasks.  This way, as soon as one developer creates the pull request, another person can sign off immediately.
-
-Note: the reviewer should not be the person who pushes the last commit on the branch.
-
-{{< /hint >}}
+*   **A.14.2.1 Secure development policy:** Our code review process is a key part of our secure development policy.
+*   **A.14.2.2 System change control procedures:** Our use of Pull Requests ensures that all changes to our production systems are made in a controlled and audited manner.
+*   **A.14.2.8 System security testing:** Our code review process is a form of manual security testing.

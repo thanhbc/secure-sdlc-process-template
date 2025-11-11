@@ -2,56 +2,39 @@
 title: Version Control
 weight: 1
 level: 1
-tldr: Every change to the source is tracked in a version control system
-rationale: Version control allows us to track and manage changes to our software code.  As a traceability system, it provides a means to understand how our software changes, who changes it, and why it was changed.
+tldr: Every change to the source is tracked in GitHub.
+rationale: Version control allows us to track and manage changes to our software code. As a traceability system, it provides a means to understand how our software changes, who changes it, and why it was changed.
 ---
 # {{% param "title" %}}
 {{< area_head >}}
 
 ## Background
-We use {{< param "vcs"  >}} to manage versioning for software development source code.  For repository hosting and user management we use {{< param "vcsHost"  >}}.
+We use **Git** for version control and **GitHub** for repository hosting and user management. All source code for our applications is stored in GitHub repositories.
 
+## Branching Strategy
 
-## Branching Strategies
-
-Every service will follow one of the following branching strategies:
-
-1. Feature Branch + Pull Request, or:
-2. Production Branches
-
-These are described below.
-
-### 1. Feature Branch + Pull Request
-
-This branching strategy uses a combination of feature branches with pull requests.
+We follow a **Feature Branch + Pull Request** branching strategy:
 
 {{< figure src="/images/feature-branch-pr.svg" alt="Feature Branch Strategy" >}}
 
-* Main branch is protected
-* Pull requests must be approved before merge to the main branch.
-* We use pull requests to enforce and document our code review process.  You can read more about it here: [Code Review Process]({{< relref "/process/ssdlc/process/code_review" >}})
-* Pull request merges should create merge or squash commits. (no fast-forward)
+*   The `main` branch is protected.
+*   All changes must be made in a feature branch.
+*   To merge changes into the `main` branch, a Pull Request must be created.
+*   Pull Requests must be approved by at least one other engineer before being merged.
+*   Pull Request merges create merge or squash commits to ensure a clean and traceable history.
 
+## Protected Branches
 
-Merges to the main should either be merge commits or squash commits... i.e. no fast-forward merges.  This allows us to atomically back out merges should we need to.
+To ensure compliance with our code review and testing processes, we protect the `main` branch with the following requirements:
 
+*   Merges require at least one approval.
+*   All automated tests (CI) must pass successfully.
+*   No unresolved merge conflicts are allowed.
 
-### 2. Production Deployment Branch
+## ISO 27001 Compliance (Annex A.8)
 
-The Production Deployment branch is an alternative to the feature-branch/pull-request strategy.
+Our use of GitHub for version control directly supports our compliance with ISO 27001, particularly in the area of **Asset Management (Annex A.8)**:
 
-This allows a model similar to trunk-based-development, where code reviews are implemented in the merge to production.
-
-* Production branch is protected
-* Pull requests must be approved before merge to production.
-* We use pull requests to enforce and document our code review process.  You can read more about it here: Code Review Process
-* Pull request merges will fast-forward. This means the production branch will always “point” to a commit on the main branch
-
-### Protected Deployment Branches
-
-To ensure compliance to the code review process, we protect the branch we deploy from (main or production) with the following requirements:
-
-* Merges require at least one approval (two if the strategy is Production Deployment Branch)
-* Builds and tests run successfully
-* No unresolved merge checks
-
+*   **A.8.1.1 Inventory of assets:** All of our source code, which is a critical asset, is inventoried and managed within GitHub.
+*   **A.8.1.3 Acceptable use of assets:** Access to our source code is controlled through GitHub's user management and permissions system.
+*   **A.8.2.3 Handling of assets:** Our branching and pull request strategy ensures that all changes to our source code are handled in a controlled and audited manner.
