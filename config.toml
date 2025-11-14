@@ -1,6 +1,6 @@
-baseURL = "https://kosli.com/secure-sdlc-process-template/"
+baseURL = "https://sdlc.belivetechnology.sg"
 languageCode = "en-us"
-title = "The Secure SDLC Process Template"
+title = "BeLive Technology Secure SDLC"
 theme = "hugo-book"
 
 [taxonomies]
@@ -8,11 +8,10 @@ theme = "hugo-book"
   level = 'levels'
 
 [params]
-  company = 'AcmePay'
+  company = 'BeLive Technology'
   csor = 'a compliance system of record'
   vcs = 'git'
   vcsHost = 'github'
-  forkLink = 'https://github.com/kosli-dev/devopsctl/fork'
   logo = 'svg/logo.svg'
   BookSection = '/'
 
